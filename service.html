@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}SERVICE PAGE{% endblock %}
+
+{% block main %}
+<style>
+label {
+	font-size: 20px;
+}
+
+.detail{
+	text-align: justify;
+	width:400px;
+	height: auto;
+	background-color: #99ccff;
+	position: sticky;
+	top: 30px;
+	left:620px;
+}
+.con{
+	padding:20px 30px 20px 60px;
+}
+
+#dis{
+	background-color:white;
+	border:1px solid #ffffcc;
+	width:280px;
+	min-height:100px;
+}
+
+img{
+	width:300px;
+}
+</style>
+	
+	<div class="detail">
+		<div class="con">
+		<img src="{{url_for('static', filename='images/p.png') }}" class="rounded float-end" alt="image">
+		<br>
+		<label>Service Name : </label>
+		<label> {{ service['name'] }} </label>
+		<br>
+		<label> Service ID : </label>
+	    <label>{{ service['service_id'] }}</label>
+	    <br>
+	    <label> CreaterID : </label>
+	    <label>{{ service['creater_id'] }}</label>
+	    <br>
+	    <label>Discription :</label>
+	    <p id='dis'>{{ service['discription'] }}</p>
+	</div>
+    </div>
+
+    
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Service List{% endblock %}
+
+{% block main %}
+
+<h2>Service List</h2>
+<ul class="list-group">		
+		{% for service in service%}
+			<li class="list-group-item"><a href="/service/{{service.service_id}}">
+			{{ service['name'] }}</a></li> 			
+			<span class="badge badge-primary">ID:{{ service['service_id'] }}</span>
+			<span class="badge badge-primary">{{ service['time_create'] }}</span>
+			<hr>
+			
+	{% endfor %}
+	</ul>
+
+
+	
+
+{% endblock %}
+	

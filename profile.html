@@ -1,0 +1,99 @@
+{% extends "baseLogged.html" %}
+
+{% block title %}Profile Page{% endblock %}
+
+{% block main %}
+
+<style>
+*{
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+
+}
+.profile{
+	margin:60px 0px 0px 200px;
+	padding:0px 30px 0px 60px;
+	position:relative;
+	text-align:center;
+	width:750px;
+	height: 400px;
+	background-color:pink;
+}
+
+#table{
+	table-layout: fixed;
+	position: relative;
+	margin:20px 0px 0px 10px;
+	padding:0px 0px 0px 10px;
+
+}
+
+#h2{
+	margin-top: -30px;
+}
+
+table,td, th{	
+	text-align: center;
+	border:1px solid #e6e6e6;
+	width:300px;
+	height:30px;
+	margin:50px 0px 0px 0px;
+	border-collapse: collapse;
+}
+
+
+th{
+	background-color:#ccffff;
+}	
+
+td{
+	background-color:#f2f2f2;
+}
+
+</style>
+<div class="profile">
+	<h2 id='h2'>Profile</h2>
+	<div>
+		<p>Your acount details are in below:</p>
+		<table id='table'>
+			<tr>
+				<th>Name:</th>
+				<td>{{ user['name'] }}</td>
+			</tr>
+			<tr>
+				<th>Age:</th>
+				<td>{{ user['Age'] }}</td>
+			</tr>
+			<tr>
+				<th>UserID:</th>
+				<td>{{ user['id'] }}</td>
+			</tr>
+			<tr>
+				<th>Username:</th>
+				<td>{{ user['username'] }}</td>
+			</tr>
+			<tr>
+				<th>Password:</th>
+				<td>{{ user['password'] }}</td>
+			</tr>
+			<tr>
+				<th>Email:</th>
+				<td>{{ user['email'] }}</td>
+			</tr>	
+			<tr>
+				<th>Phone Number:</th>
+				<td>{{ user['phone'] }}</td>
+			</tr>
+			<tr>
+				<th>Time craete:</th>
+				<td>{{ user['time_create'] }}</td>
+			</tr>		
+
+		</table>
+	</div>
+</div>
+
+
+
+{% endblock %}
+	

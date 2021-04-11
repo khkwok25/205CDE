@@ -1,0 +1,35 @@
+<from action ="http://localhost:5000/contact" method = post>
+	<fieldset>
+		<legend>Contact Form</legend>
+		{{ form.hidden_tag() }}
+
+	<div style = font_size:20px; font-weight:bold; margin-left:150px;>
+		{{ form.name.label }}<br>
+		{{ form.name }}
+		 {% for message in form.name.errors %}
+	<span style="color:red">{{ message }}</span>
+	    {% endfor %}
+
+	    <br>
+	    {{ form.Gender.label }} {{ form.Gender }}
+	    {{ form.Address.label}} <br>
+	    {{ form.Address }}
+	    <br>
+
+	    {{ forms.email.label }}<br>
+	    {{ form.email }}
+	    {% for message in form.email.errors %}
+	        <span style="color:red"> {{ message }} </span>
+	    {% endfor %}
+
+	    {{ form.Age.label }}<br>
+	    {{ form.Age }}
+	    <br>
+
+	    <!--{{form.language.label }}<br>
+	    	{{ form.language }}
+	    	<br>-->
+	    	{{ form.submit }}
+	    </div>
+	</fieldset>
+</from>

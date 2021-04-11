@@ -1,0 +1,56 @@
+{% extends "baseLogged.html" %}
+
+{% block title %}HOME PAGE{% endblock %}
+
+{% block main %}
+<style>
+label {
+	font-size: 20px;
+}
+
+.detail{
+	text-align: justify;
+	width:400px;
+	height: auto;
+	background-color: pink;
+	position: sticky;
+	top: 30px;
+	left:620px;
+}
+.con{
+	padding:20px 30px 20px 60px;
+}
+
+#dis{
+	background-color:white;
+	border:1px solid #ffffcc;
+	width:280px;
+	min-height:100px;
+}
+
+img{
+	width:300px;
+}
+</style>
+	
+	<div class="detail">
+		<div class="con">
+		<img src="{{url_for('static', filename='images/p.png') }}" class="rounded float-end" alt="image">
+		<br>
+		<label>Product Name : </label>
+		<label> {{ product['name'] }} </label>
+		<br>
+		<label> ProductID : </label>
+	    <label>{{ product['product_id'] }}</label>
+	    <br>
+	    <label> CreaterID : </label>
+	    <label><a a href="/login/creater/{{product.creater_id}}">{{ product['creater_id'] }}</a></label>
+	    <br>
+	    <label>Discription :</label>
+	    <p id='dis'>{{ product['discription'] }}</p>
+	</div>
+    </div>
+
+    
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Venue List{% endblock %}
+
+{% block main %}
+
+<h2>Venue List</h2>
+<ul class="list-group">		
+		{% for venue in venue%}
+			<li class="list-group-item"><a href="/venue/{{venue.venue_id}}">
+			{{ venue['name'] }}</a></li> 			
+			<span class="badge badge-primary">ID:{{ venue['venue_id'] }}</span>
+			<span class="badge badge-primary">{{ venue['time_create'] }}</span>
+			<hr>
+			
+	{% endfor %}
+	</ul>
+
+
+	
+
+{% endblock %}
+	

@@ -1,0 +1,47 @@
+{% extends 'baseLogged.html' %}
+
+{% block main %}
+<style>
+  .E{
+    margin-right: 70px;
+    position:relative;
+  }
+</style>
+<h1> Edit "{{ venue['name'] }}" </h1>
+
+<div class='E'>
+    <form method="post">
+        <div class="form-group">
+            <label for="name">Venue Name</label>
+            <input type="text" name="name" placeholder="venue name"
+                   class="form-control"
+                   value="{{ request.form['name'] or venue['name'] }}" required>
+            </input>
+        </div>
+
+<div class="form-group">
+            <label for="address">Address</label>
+            <textarea name="address" placeholder="address"
+                      class="form-control" required>{{ request.form['address'] or venue['address'] }}</textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="discription">Discription</label>
+            <textarea name="discription" placeholder="Venue Discription..."
+                      class="form-control" required>{{ request.form['discription'] or venue['discription'] }}</textarea>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+
+    </form>
+    <div style="margin-top: -47px; margin-left: 90px;">
+    <form action="{{ url_for('deletev', venue_id=venue['venue_id']) }}" method="POST">
+        <input type="submit" value="Delete" class="btn btn-danger btn-sm"
+            onclick="return confirm('Are you sure you want to delete this venue?')">
+    </form>
+    <div>
+    <hr>
+  </div>
+
+{% endblock %}

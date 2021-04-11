@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}VENUE PAGE{% endblock %}
+
+{% block main %}
+<style>
+label {
+	font-size: 20px;
+}
+
+.detail{
+	text-align: justify;
+	width:400px;
+	height: auto;
+	background-color: #99ccff;
+	position: sticky;
+	top: 30px;
+	left:620px;
+}
+.con{
+	padding:20px 30px 20px 60px;
+}
+
+#n1{
+	text-align:center;
+	background-color:white;
+	width:300px;
+}
+
+#dis{
+	background-color:white;
+	border:1px solid #ffffcc;
+	width:300px;
+	min-height:100px;
+}
+
+img{
+	width:300px;
+}
+</style>
+	
+	<div class="detail">
+		<div class="con">
+		<img src="{{url_for('static', filename='images/p.png') }}" class="rounded float-end" alt="image">
+		<br>
+		<br>
+		<label>Name : </label>
+		<label id='n1'> {{ venue['name'] }}</label>
+		<br>
+		<label> Venue ID : </label>
+	    <label>{{ venue['venue_id'] }}</label>
+	    <br>
+	    <label> CreaterID : </label>
+	    <label>{{ venue['creater_id'] }}</label>
+	    <br>
+	    <label>Discription :</label>
+	    <p id='dis'>{{ venue['discription'] }}</p>
+	</div>
+    </div>
+
+    
+
+{% endblock %}

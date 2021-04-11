@@ -1,0 +1,76 @@
+{% extends "baseLogged.html" %}
+
+{% block title %}Created PAGE(logged){% endblock %}
+
+{% block main %}
+<style>
+	#btn2{
+		margin-top: -33px;
+		float:right;
+	}
+	</style>
+<h5>Welcome, {{ username }}!</h5>
+<h3>Here are the product and service you created</h3> 
+<div class=button  >
+	<button class="btn btn-primary" ><a href="{{url_for('create') }}" style='color:black;'>Create Product</a></button>
+	<button class="btn btn-primary" ><a href="{{url_for('createS') }}" style='color:black;'>Create Service</a></button>
+	<button class="btn btn-primary" ><a href="{{url_for('createV') }}" style='color:black;'>Create Venue</a></button>
+</div>
+<hr>
+<h4>Product</h4>
+<ul class="list-group">		
+		{% for product in product%}
+			<li class="list-group-item"><a href="/login/product/{{product.product_id}}">
+			{{ product['name'] }}</a>
+		<form action="{{url_for('delete', product_id=product['product_id']) }}" method="POST">
+				<input type="submit" id="btn2" value="Delete" 
+				class="btn btn-danger btn-sm"
+				onclick="return confirm('Are you sure you want to delete this product?">
+			</form>	
+		</li> 			
+			<span class="badge badge-primary">{{ product['product_id'] }}</span>
+			<span class="badge badge-primary">{{ product['time_create'] }}</span>
+			<a href="{{url_for('edit', product_id=product['product_id']) }}">
+				<span class="badge badge-warning">Edit</span></a>
+
+	{% endfor %}
+	</ul>
+<h4>Service</h4>
+<ul class="list-group">		
+		{% for service in service%}
+			<li class="list-group-item"><a href="/login/service/{{service.service_id}}">
+			{{ service['name'] }}</a>
+		<form action="{{url_for('deletes', service_id=service['service_id']) }}" method="POST">
+				<input type="submit" id="btn2" value="Delete" 
+				class="btn btn-danger btn-sm"
+				onclick="return confirm('Are you sure you want to delete this service?">
+			</form>	</li> 			
+			<span class="badge badge-primary">{{ service['service_id'] }}</span>
+			<span class="badge badge-primary">{{ service['time_create'] }}</span>
+			<a href="{{url_for('edits', service_id = service['service_id']) }}">
+				<span class="badge badge-warning">Edit</span></a>
+	{% endfor %}
+	</ul>
+
+<h4>Venue</h4>
+<ul class="list-group">		
+		{% for venue in venue%}
+			<li class="list-group-item"><a href="/login/venue/{{venue.venue_id}}">
+			{{ venue['name'] }}</a>
+		<form action="{{url_for('deletev', venue_id=venue['venue_id']) }}" method="POST">
+				<input type="submit" id="btn2" value="Delete" 
+				class="btn btn-danger btn-sm"
+				onclick="return confirm('Are you sure you want to delete this venue?">
+			</form>	</li> 			
+			<span class="badge badge-primary">{{ venue['venue_id'] }}</span>
+			<span class="badge badge-primary">{{ venue['time_create'] }}</span>
+			<a href="{{url_for('editv', venue_id = venue['venue_id']) }}">
+				<span class="badge badge-warning">Edit</span></a>
+	{% endfor %}
+	</ul>
+
+
+	
+
+{% endblock %}
+	

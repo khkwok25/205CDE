@@ -1,0 +1,58 @@
+{% extends "baseLogged.html" %}
+
+{% block title %}Created PAGE(logged){% endblock %}
+
+{% block main %}
+<style>
+	#btn2{
+		margin-top: -33px;
+		float:right;
+	}
+	</style>
+
+<h3>Here are the record that created by {{user['name']}} ( ID : {{user['id']}} )</h3> 
+
+
+<hr>
+<h4>Product</h4><hr>
+<ul class="list-group">		
+		{% for product in product%}
+			<li class="list-group-item"><a href="/login/product/{{product.product_id}}">
+			{{ product['name'] }}</a>
+	
+		</li> 			
+			<span class="badge badge-primary">{{ product['product_id'] }}</span>
+			<span class="badge badge-primary">{{ product['time_create'] }}</span>
+			
+
+	{% endfor %}
+	</ul>
+<h4>Service</h4><hr>
+<ul class="list-group">		
+		{% for service in service%}
+			<li class="list-group-item"><a href="/login/service/{{service.service_id}}">
+			{{ service['name'] }}</a>
+		</li> 			
+			<span class="badge badge-primary">{{ service['service_id'] }}</span>
+			<span class="badge badge-primary">{{ service['time_create'] }}</span>
+			
+	{% endfor %}
+	</ul>
+
+<h4>Venue</h4><hr>
+<ul class="list-group">	
+
+		{% for venue in venue%}
+			<li class="list-group-item"><a href="/login/venue/{{venue.venue_id}}">
+			{{ venue['name'] }}</a>
+		</li> 			
+			<span class="badge badge-primary">{{ venue['venue_id'] }}</span>
+			<span class="badge badge-primary">{{ venue['time_create'] }}</span>
+			
+	{% endfor %}
+	</ul>
+
+
+	
+
+{% endblock %}

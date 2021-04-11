@@ -1,0 +1,30 @@
+{% extends 'baseLogged.html' %}
+
+{% block main %}
+<h1>Create a New Venue</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label>Venue name</label>
+        <input type="text" name="name"
+               placeholder="Venue Name" class="form-control"
+               value="{{ request.form['name'] }}" required></input>
+    </div>
+
+    <div class="form-group">
+        <label for="address">Address</label>
+        <textarea name="address" placeholder="Address"
+                  class="form-control" required>{{ request.form['address'] }}</textarea>
+    </div>
+
+    
+    <div class="form-group">
+        <label for="discription">Discription</label>
+        <textarea name="discription" placeholder="Discription"
+                  class="form-control" required>{{ request.form['discription'] }}</textarea>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}

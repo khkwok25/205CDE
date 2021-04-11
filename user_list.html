@@ -1,0 +1,22 @@
+{% extends "baseLogged.html" %}
+
+{% block title %}USER LIST PAGE(logged){% endblock %}
+
+{% block main %}
+<h2>User List</h2>
+<ul class="list-group">		
+		{% for user in user %}
+			<li class="list-group-item"><a href="/login/creater/{{user.id}}">
+			{{ user['name'] }}</a></li> 			
+			<span class="badge badge-primary">ID:{{ user['id'] }}</span>
+
+			<hr>
+			
+	{% endfor %}
+	</ul>
+
+
+	
+
+{% endblock %}
+	

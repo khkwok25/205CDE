@@ -1,0 +1,55 @@
+{% extends "baseLogged.html" %}
+
+{% block title %}Creater PAGE{% endblock %}
+
+{% block main %}
+<style>
+label {
+	font-size: 20px;
+}
+
+.detail{
+	text-align: justify;
+	width:400px;
+	height: auto;
+	background-color: #ff9999;
+	position: sticky;
+	top: 30px;
+	left:620px;
+}
+.con{
+	padding:20px 30px 20px 60px;
+}
+
+
+img{
+	width:300px;
+}
+</style>
+	
+	<div class="detail">
+		<div class="con">
+		<img src="{{url_for('static', filename='images/pp.png') }}" class="rounded float-end" alt="image">
+		<br>
+		<label> Name : </label>
+		<label> {{ user['name'] }} </label>
+		<br>
+		<label> Creater ID : </label>
+	    <label>{{ user['id'] }}</label>
+	    <br>
+	    <label> Email : </label>
+	    <label>{{ user['email'] }}</a></label>
+	    <br>
+	    <label>Age :</label>
+	    <label>{{ user['Age'] }}</a></label>
+	    <br>
+	    <label>phone</label>
+	    <label>{{ user['phone'] }}</a></label>
+	    <h5><a href="/login/creatercreated/{{user.id}}">Craeter Record</a></h5>
+	</div>
+    </div>
+
+
+    
+
+{% endblock %}

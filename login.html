@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}LOGIN PAGE{% endblock %}
+
+{% block main %}
+<style>
+* {
+
+  box-sizing: border-box;
+}
+
+.container{
+	text-align:center;
+	margin-top: 50px;
+    width:auto;
+    height: auto;
+    padding: -10px 30px 30px 90px ;
+    background-color: pink;
+    
+
+}
+.login{
+	position: sticky;
+
+}
+
+input[type=text], input[type=password] {
+  width: 300px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+#submit_btn{
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px 20px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	width: 100px;
+	opacity: 0.9;
+}
+#submit_btn:hover {
+  opacity: 1;
+}
+</style>
+
+<div class="container">
+	<div class="msg" style='color:grey;'>{{ msg }}</div>
+	<div class="login">	
+	    <h2>Login</h2>
+
+	    <form method="POST" action="{{ url_for('login') }}">
+	    	
+	    	<label>Username:</label>
+			<input type = "text" name = "username" id="username" required>
+			<br>
+			<label>Password:</i></label>
+			<input type = "password" name = "password" id="password" required>
+			<br>
+			<div class="msg">{{ msg }}</div>       
+			<input type = "submit" id="submit_btn" value = "Login"/>
+	    </form>
+	</div>	
+
+{% endblock %}
