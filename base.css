@@ -1,0 +1,42 @@
+*{
+	margin:0px;
+	padding:0px;
+}
+
+.navbar-brand{
+	width:130px;  
+    text-align:center;
+    background-color: #e6e6e6;
+}
+
+
+.vb1{	
+    margin-top:-20px;
+    padding: 0px;
+    width: 200px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #e8e3e3;
+    text-align: center;
+    position: static;
+    background-color: #f6f4f4;
+    height: 0px;
+    
+    }
+
+li a {
+    display: block;
+    color: #737373;
+    padding: 8px 15px;
+    text-decoration: none;
+    }
+
+li a:hover:not(.active){
+    background-color: pink;
+    color: white;
+    }
+
+.content{
+	margin-top: 0px;
+	margin-left:160px
+		}
